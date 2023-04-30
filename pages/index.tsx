@@ -1,13 +1,14 @@
+import Experience from "@/components/Experience"
 import Knowledge from "@/components/Knowledge"
 import Header from "@/components/header"
 
 export default function Home() {
   return (
-    <main className="border-b border-black border-opacity-20 border-dashed"
+    <main className="border-b border-black border-opacity-10 border-dashed"
     >
       <Header />
-      <div className="container flex mx-auto border-x border-black border-opacity-20 border-dashed">
-        <div className="md:max-w-5xl w-full md:px-4 mx-auto pt-20 border-x border-black border-opacity-20 border-dashed">
+      <div className="container flex mx-auto border-x border-black border-opacity-10 border-dashed">
+        <div className="md:max-w-5xl w-full md:px-4 mx-auto pt-20 border-x border-black border-opacity-10 border-dashed">
           <div className="max-w-2xl mx-auto px-3 pb-36">
           <section className="mb-8">
             <h1 className="h1 mb-4">Mauro Fernández</h1>
@@ -17,9 +18,13 @@ export default function Home() {
             <p className="font-[350] text-black text-opacity-8 leading-[1.6] mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam odio animi veniam fugiat atque.</p>
           </section>
           <Knowledge />
+          <Experience />
           </div>
         </div>
       </div>
+      <section className="py-8 border-t border-black border-opacity-10 border-dashed">
+
+      </section>
     </main>
   )
 }

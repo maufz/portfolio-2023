@@ -41,7 +41,7 @@ const knowledge = [
 
 export default function Knowledge() {
   return (
-    <div className="flex gap-4 flex-wrap">
+    <div className="flex gap-4 flex-wrap mb-14">
       {knowledge.map(item => <KnowledgeItem icon={item.icon} text={item.text} url={item.url} />)}
     </div>
   )
