@@ -17,7 +17,7 @@ export default function Experience() {
 
 
 function ExperienceItem({img, title, subtitle, imgAlt, link}: ItemProps) {
-  return <a href={link} className="flex items-center justify-between rounded-2xl border border-black border-opacity-20 p-4 bg-white bg-opacity-50
+  return <a href={link} className="flex flex-col sm:flex-row md:items-center gap-y-2 justify-between rounded-2xl border border-black border-opacity-20 p-4 bg-white bg-opacity-50
   hover:shadow transition-shadow" target="_blank">
     <div className="flex items-center gap-2">
       <img src={img} alt={imgAlt} className="rounded-lg border border-black border-opacity-10 bg-white" /> {title}
