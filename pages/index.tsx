@@ -1,5 +1,6 @@
 import Experience from "@/components/Experience"
 import Knowledge from "@/components/Knowledge"
+import Portfolios from "@/components/Portfolios"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
@@ -10,7 +11,7 @@ export default function Home() {
       >
         <Header />
         <div className="container flex mx-auto xl:border-x border-black border-opacity-10 border-dashed">
-          <div className="md:max-w-5xl w-full md:px-4 mx-auto pt-6 pb-6 lg:pt-20 md:border-x border-black border-opacity-10 border-dashed">
+          <div className="md:max-w-5xl w-full md:px-4 mx-auto pt-6 pb-6 lg:pt-16 md:border-x border-black border-opacity-10 border-dashed">
             <div className="max-w-2xl mx-auto px-3 lg:pb-36">
             <section className="mb-8">
               <h1 className="h1 mb-2 md:mb-4">Mauro Fernández</h1>
@@ -24,9 +25,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className="py-8 border-t border-black border-opacity-10 border-dashed">
-
-        </section>
+        <Portfolios />
       </main>
       <Footer></Footer>
     </>
