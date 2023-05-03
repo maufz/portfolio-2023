@@ -43,6 +43,7 @@ export default function Knowledge() {
   return (
     <div className="flex gap-2 md:gap-4 flex-wrap mb-10 md:mb-14">
       {knowledge.map((item) => <KnowledgeItem icon={item.icon} text={item.text} url={item.url} key={item.text} />)}
+      <KnowledgeItem text="Y más..." />
     </div>
   )
 }
