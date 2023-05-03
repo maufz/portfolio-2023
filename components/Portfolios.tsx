@@ -15,14 +15,32 @@ interface ItemProps {
     title: string
     img: string
     icon?: string
-    link: string
+    link: string,
+    variant?: 'variant1' | 'variant2'
 }
 
-function PortfolioItem({title, img, icon, link}: ItemProps) {
+
+function PortfolioItem(props: ItemProps) {
+
+    const { title, img, icon, link, variant = 'variant2' } = props;
+
+    if (variant == 'variant2') return <PortfolioItemVariant2 {...props} />;
+
     return <a href={link} target="_blank">
         <article className="p-6 border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col gap-4 h-full hover:shadow transition-shadow">
             <img src={img} alt="" className="aspect-[3/2] w-full object-cover rounded-lg border border-black border-opacity-10 bg-white" />
             <div className="flex items-center gap-3">
+                {icon && <img src={icon} className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover" />} <h1 className="text-xl font-medium font-headings">{title}</h1>
+            </div>
+        </article>
+    </a>
+}
+
+function PortfolioItemVariant2({ title, img, icon, link }: ItemProps) {
+    return <a href={link} target="_blank">
+        <article className="border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col gap-4 h-full hover:shadow transition-shadow">
+            <img src={img} alt="" className="aspect-[3/2] w-full object-cover rounded-t-2xl border border-black border-opacity-10 bg-white" />
+            <div className="flex items-center gap-3 px-4 pb-5">
                 {icon && <img src={icon} className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover" />} <h1 className="text-xl font-medium font-headings">{title}</h1>
             </div>
         </article>
