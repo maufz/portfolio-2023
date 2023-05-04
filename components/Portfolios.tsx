@@ -1,6 +1,6 @@
 export default function Portfolios() {
     return <section className="pt-8 pb-14 border-t border-black border-opacity-10 border-dashed">
-        <div className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-6 content-center">
+        <div className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 content-center">
             <PortfolioItem title="Peregrinus" img="portfolios/peregrinus2.png" icon="portfolios/peregrinus-icon.jpg" link="https://peregrinus.com.uy" />
             <PortfolioItem title="Midinero" img="portfolios/midinero2.jpg" icon="portfolios/midinero-icon.jpg" link="https://midinero.com.uy" imgWrapperClasses="bg-[#C2E2FF]" />
             <PortfolioItem title="Innuy" img="portfolios/innuy2.jpg" icon="portfolios/innuy-icon.jpg" link="https://innuy.com" imgWrapperClasses="bg-[#FBD4B6]" />
@@ -55,8 +55,8 @@ function PortfolioItemVariant3({ title, img, icon, link, imgWrapperClasses = 'bg
             <div className={`${imgWrapperClasses} p-4 xl:p-6 xl:pb-[26px] flex items-center justify-center border-b border-black border-opacity-10`}>
                 <img src={img} alt="" className="aspect-video w-full object-cover rounded-lg bg-white mb-[2] group-hover:-translate-y-1 transition-transform group-hover:duration-300" />
             </div>
-            <div className="flex items-center gap-3 p-4 xl:px-6 xl:pb-6 xl:pt-5">
-                {icon && <img src={icon} className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover" />} <h1 className="text-xl font-medium font-headings">{title}</h1>
+            <div className="flex items-center gap-2 md:gap-3 p-4 xl:px-6 xl:pb-6 xl:pt-5">
+                {icon && <img src={icon} className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover" />} <h1 className="text-md lg:text-xl font-medium font-headings">{title}</h1>
             </div>
         </article>
     </a>

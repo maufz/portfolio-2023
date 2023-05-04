@@ -1,5 +1,5 @@
 export default function Experience() {
-  return <section className="flex flex-col gap-6">
+  return <section className="flex flex-col gap-4 md:gap-6">
     <div>
       <h2 className="h4 mb-2">Experiencia</h2>
       <ExperienceItem img="ameba-logo.jpg" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.com.uy" />

@@ -1,4 +1,11 @@
-const knowledge = [
+interface Knowledge {
+  text: string
+  icon?: string
+  url?: string
+  classes?: string
+}
+
+const knowledge: Knowledge[] = [
   {
     text: 'React',
     icon: 'fa-brands_react.svg',
@@ -43,7 +50,7 @@ export default function Knowledge() {
   return (
     <div className="flex gap-2 md:gap-4 flex-wrap mb-10 md:mb-14">
       {knowledge.map((item) => <KnowledgeItem icon={item.icon} text={item.text} url={item.url} key={item.text} className={item.classes} />)}
-      <KnowledgeItem text="Y más..." />
+      <KnowledgeItem text="Y más..." className="text-black text-opacity-80" />
     </div>
   )
 }
@@ -64,7 +71,6 @@ function KnowledgeItem({ text, icon, url, className }: KnowledgeItemProps) {
       flex items-center gap-1 sm:gap-2 rounded-2xl border border-black border-opacity-20 px-4 py-3 bg-white bg-opacity-50
       hover:shadow transition-shadow
       `}
-      
     >
       {icon && <img src={icon} />} {text}
     </div>
