@@ -6,7 +6,7 @@ export default function Experience() {
     </div>
     <div>
       <h2 className="h4 mb-2">Educación</h2>
-      <ExperienceItem img="ort-logo.jpg" title="Tec. en Diseño Digital Web, Universidad ORT" subtitle="2018 - 2020" link="https://ort.edu.uy" />
+      <ExperienceItem img="ort-logo.jpg" title="Tec. en Diseño Digital Web, Universidad&nbsp;ORT" subtitle="2018 - 2020" link="https://ort.edu.uy" />
     </div>
     <div>
       <h2 className="h4 mb-2">Cursos</h2>
@@ -17,12 +17,17 @@ export default function Experience() {
 
 
 function ExperienceItem({img, title, subtitle, imgAlt, link}: ItemProps) {
-  return <a href={link} className="flex flex-col sm:flex-row md:items-center gap-y-2 justify-between rounded-2xl border border-black border-opacity-20 p-4 bg-white bg-opacity-50
+  return <a href={link} className="flex md:items-center gap-x-3 gap-y-2 rounded-2xl border border-black border-opacity-20 p-3 sm:p-4 bg-white bg-opacity-50
   hover:shadow transition-shadow" target="_blank">
-    <div className="flex items-center gap-2">
-      <img src={img} alt={imgAlt} className="rounded-lg border border-black border-opacity-10 bg-white" /> {title}
+    <div className="flex items-start md:block gap-2 shrink-0">
+      <img src={img} alt={imgAlt} className="rounded-lg border border-black border-opacity-10 bg-white" />
     </div>
-    <div className="text-black text-opacity-70">{subtitle}</div>
+    <div className="sm:flex sm:gap-2 sm:justify-between flex-grow items-center">
+      <div>
+        {title}
+      </div>
+      <div className="text-black text-opacity-70">{subtitle}</div>
+    </div>
   </a>
 }
 

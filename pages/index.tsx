@@ -12,7 +12,7 @@ export default function Home() {
         <Header />
         <div className="container flex mx-auto xl:border-x border-black border-opacity-10 border-dashed">
           <div className="md:max-w-5xl w-full md:px-4 mx-auto pt-6 pb-6 lg:pt-16 md:border-x border-black border-opacity-10 border-dashed">
-            <div className="max-w-2xl mx-auto px-3 lg:pb-36">
+            <div className="max-w-2xl mx-auto md:px-3 lg:pb-24">
             <section className="mb-8">
               <h1 className="h1 mb-2 md:mb-4">Mauro Fernández</h1>
               <h2 className="h3 mb-6 md:mb-10">Desarrollador Frontend</h2>

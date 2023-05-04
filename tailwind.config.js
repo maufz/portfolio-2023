@@ -19,7 +19,8 @@ module.exports = {
         text: ['Open Sans']
       },
       container: {
-        center: true
+        center: true,
+        padding: 16
       }
     },
   },
