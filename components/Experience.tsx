@@ -10,7 +10,7 @@ export default function Experience() {
     </div>
     <div>
       <h2 className="h4 mb-2">Cursos</h2>
-      <ExperienceItem img="coderhouse-logo.jpg" title="Diseño UX/UI, Coderhouse" subtitle="10/2022 - 01/2023" link="https://coderhouse.com" />
+      <ExperienceItem img="coderhouse-logo.jpg" title="Diseño UX/UI, Coderhouse" subtitle="10/2022 - 01/2023" link="https://coderhouse.com.uy/pages/certificados/63d446d4687a8c000e5c91d8" />
     </div>
   </section>
 }
