@@ -5,8 +5,8 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Head from "next/head"
 
-const ageTimestamp = new Date().getTime() - new Date('1999-04-19').getTime();
-const age = Math.floor(ageTimestamp / (1000 * 60 * 60 * 24 * 365));
+const ageTimeDiff = new Date().getTime() - new Date('1999-04-19').getTime();
+const age = Math.floor(ageTimeDiff / (1000 * 60 * 60 * 24 * 365));
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
                 Soy Mauro y tengo {age} años. Desde 2019 me desempeño como desarrollador front-end.
                 </p>
                 <p className="font-[350] text-black text-opacity-8 leading-[1.6]">
-                  Desde el inicio de mi formación como desarrollador, pienso que la mejor manera de aprender y crecer es mediante la práctica constante e investigación continua. De esta manera, me mantengo actualizado en todo lo relacionado con el desarrollo y otras áreas de mi interés.
+                  Desde el inicio de mi formación como desarrollador, siento que la mejor manera de aprender y crecer es mediante la práctica constante e investigación continua. De esta manera, me mantengo actualizado en todo lo relacionado con el desarrollo y otras áreas de mi interés.
                 </p>
                 <p className="font-[350] text-black text-opacity-8 leading-[1.6]">
                   Me gusta desafiarme a mí mismo a través de proyectos personales.
