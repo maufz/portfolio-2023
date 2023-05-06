@@ -9,6 +9,9 @@ const bodyFont = Open_Sans({subsets: ['latin']});
 
 export default function App({ Component, pageProps }: AppProps) {
   return <div className={`${poppins.variable} ${bodyFont.className}`}>
+    <Head>
+      <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    </Head>
     <Component {...pageProps} />
   </div>
 }
