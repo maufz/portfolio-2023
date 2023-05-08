@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import dottedBg from "@/public/dotted-bg.png";
 
 export default function Header() {
   const states = ['h-24 lg:h-44', 'h-96'];
@@ -9,7 +10,7 @@ export default function Header() {
   }
 
   return <header>
-    <div className={`relative ${coverState} bg-gradient-to-b from-teal-400 to-cyan-600 after:absolute after:inset-0 after:backdrop-blur after:border-b -after:border-black after:border-opacity-10 transition-all`} onClick={handleCoverClick}></div>
+    <div style={{backgroundImage: `url(${dottedBg.src})`}} className={`${coverState} transition-all bg-teal-400`} onClick={handleCoverClick}></div>
     <div className="relative border-b border-black border-opacity-10 border-dashed">
       <div className="max-w-2xl mx-auto px-3 flex items-center">
         <img src="profile.webp" className="w-[120px] h-[120px] rounded-full mt-[-60px] inline-block border-2 border-white mr-2" alt="" />
