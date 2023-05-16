@@ -1,18 +1,24 @@
+import { motion } from "framer-motion";
+
+import {container, item} from "../utils/nested-animations";
+
 export default function Experience() {
-  return <section className="flex flex-col gap-4 md:gap-6">
-    <div>
+  return <motion.section className="flex flex-col gap-4 md:gap-6" variants={container}
+  initial="hidden"
+  animate="visible" viewport={{ once: true }}>
+    <motion.div variants={item}>
       <h2 className="h4 mb-2">Experiencia</h2>
       <ExperienceItem img="ameba-logo.jpg" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.com.uy" />
-    </div>
-    <div>
+    </motion.div>
+    <motion.div variants={item}>
       <h2 className="h4 mb-2">Educación</h2>
       <ExperienceItem img="ort-logo.jpg" title="Tec. en Diseño Digital Web, Universidad&nbsp;ORT" subtitle="2018 - 2020" link="https://ort.edu.uy" />
-    </div>
-    <div>
+    </motion.div>
+    <motion.div variants={item}>
       <h2 className="h4 mb-2">Cursos</h2>
       <ExperienceItem img="coderhouse-logo.jpg" title="Diseño UX/UI, Coderhouse" subtitle="10/2022 - 01/2023" link="https://coderhouse.com.uy/pages/certificados/63d446d4687a8c000e5c91d8" />
-    </div>
-  </section>
+    </motion.div>
+  </motion.section>
 }
 
 
