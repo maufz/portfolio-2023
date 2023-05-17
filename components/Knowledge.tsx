@@ -7,9 +7,8 @@ interface Knowledge {
 
 import { motion } from "framer-motion";
 
-import {container, item, quickContainer} from "../utils/nested-animations";
+import {item, quickContainer} from "../utils/nested-animations";
 
-console.log(quickContainer);
 const knowledge: Knowledge[] = [
   {
     text: "React",
@@ -91,7 +90,7 @@ function KnowledgeItem({ text, icon, url, className }: KnowledgeItemProps) {
       hover:shadow transition-shadow
       `}
     >
-      {icon && <img src={icon} />} {text}
+      {icon && <img src={icon} alt={`Logo de ${text}`} />} {text}
     </motion.div>
   );
 }

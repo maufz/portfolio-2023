@@ -77,7 +77,7 @@ function PortfolioItem(props: ItemProps) {
       <article className="p-6 border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col gap-4 h-full hover:shadow transition-shadow">
         <img
           src={img}
-          alt=""
+          alt={`Captura de pantalla de la página de inicio de ${title}`}
           className={`aspect-[3/2] w-full object-cover rounded-lg border border-black border-opacity-10 bg-white`}
         />
         <div className="flex items-center gap-3">
@@ -86,7 +86,7 @@ function PortfolioItem(props: ItemProps) {
               src={icon}
               className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
             />
-          )}{" "}
+          )}
           <h1 className="text-xl font-medium font-headings">{title}</h1>
         </div>
       </article>
@@ -109,7 +109,7 @@ function PortfolioItemVariant2({ title, img, icon, link }: ItemProps) {
               src={icon}
               className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
             />
-          )}{" "}
+          )}
           <h1 className="text-xl font-medium font-headings">{title}</h1>
         </div>
       </article>
@@ -125,14 +125,19 @@ function PortfolioItemVariant3({
   imgWrapperClasses = "bg-[#CFE5E7]",
 }: ItemProps) {
   return (
-    <motion.a href={link} target="_blank" className="group max-w-lg mx-auto" variants={item}>
+    <motion.a
+      href={link}
+      target="_blank"
+      className="group max-w-lg mx-auto"
+      variants={item}
+    >
       <article className="border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col h-full group-hover:shadow transition-shadow overflow-clip">
         <div
           className={`${imgWrapperClasses} p-4 xl:p-6 xl:pb-[26px] flex items-center justify-center border-b border-black border-opacity-10`}
         >
           <img
             src={img}
-            alt=""
+            alt={`Captura de pantalla de la página de inicio de ${title}`}
             className="aspect-video w-full object-cover rounded-lg bg-white mb-[2] group-hover:-translate-y-1 transition-transform group-hover:duration-300"
           />
         </div>
@@ -140,9 +145,10 @@ function PortfolioItemVariant3({
           {icon && (
             <img
               src={icon}
+              alt={`Logo de ${title}`}
               className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
             />
-          )}{" "}
+          )}
           <h1 className="text-md lg:text-xl font-medium font-headings">
             {title}
           </h1>
