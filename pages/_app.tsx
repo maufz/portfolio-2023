@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return <div className={`${poppins.variable} ${bodyFont.className}`}>
     <Head>
       <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+      <meta name="description" content="Desarrollador Web" />
     </Head>
     <Component {...pageProps} />
   </div>
