@@ -29,8 +29,7 @@ export default function About() {
           Me gusta desafiarme a mí mismo a través de proyectos personales.
         </p>
         <p className="font-[350] text-black text-opacity-8 leading-[1.6]">
-          Además del desarrollo, también me interesa el diseño UX/UI, lo que me
-          motivó a realizar el curso de diseño en Coderhouse.
+          Además del desarrollo, también me interesa el diseño UX/UI.
         </p>
       </div>
     </motion.section>
