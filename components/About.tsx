@@ -25,12 +25,7 @@ export default function About() {
           investigación continua. De esta manera, me mantengo actualizado en
           todo lo relacionado con el desarrollo y otras áreas de mi interés.
         </p>
-        <p className="font-[350] text-black text-opacity-8 leading-[1.6]">
-          Me gusta desafiarme a mí mismo a través de proyectos personales.
-        </p>
-        <p className="font-[350] text-black text-opacity-8 leading-[1.6]">
-          Además del desarrollo, también me interesa el diseño UX/UI.
-        </p>
+        <p className="font-[350] text-black text-opacity-8 leading-[1.6]">Me gusta desafiarme a mí mismo a través de proyectos personales para poner a prueba nuevas herramientas y lenguajes.</p>
       </div>
     </motion.section>
   );
