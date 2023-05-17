@@ -12,7 +12,7 @@ export default function Header() {
 
   return <header>
     <div style={{backgroundImage: `url(${dottedBg.src})`}} className={`${coverState} transition-all bg-teal-400 relative`} onClick={handleCoverClick}>
-      <motion.div className="absolute top-0 left-0 w-full bg-[#F1F1F1]" initial={{height: '100%'}} animate={{height: 0}} transition={{duration: 0.5, delay: 0.2, type: 'spring'}}>
+      <motion.div className="absolute top-0 left-0 w-full bg-[#F1F1F1]" initial={{height: '100%'}} animate={{height: 0}} transition={{duration: 0.5, delay: 0.09, type: 'spring'}}>
 
       </motion.div>
     </div>
