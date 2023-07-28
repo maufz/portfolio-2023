@@ -1,7 +1,17 @@
 import { motion } from "framer-motion";
 import { container, item } from "../utils/nested-animations";
 
-export default function Portfolios() {
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder({
+  projectId: 't9c2a4oz',
+  dataset: 'production',
+})
+
+export default function Portfolios({portfolios}) {
+
+  // console.log(portfolios);
+
   return (
     <section className="pt-8 pb-14 border-t border-black border-opacity-10 border-dashed">
       <motion.div
@@ -11,47 +21,13 @@ export default function Portfolios() {
         animate="visible"
         viewport={{ once: true }}
       >
-        <PortfolioItem
-          title="Peregrinus"
-          img="portfolios/peregrinus2.webp"
+        {portfolios.map((portfolio) => (<PortfolioItem
+          title={portfolio.name}
+          img={builder.image(portfolio.thumbnail).url()}
           icon="portfolios/peregrinus-icon.webp"
-          link="https://peregrinus.com.uy"
-        />
-        <PortfolioItem
-          title="Midinero"
-          img="portfolios/midinero2.webp"
-          icon="portfolios/midinero-icon.webp"
-          link="https://midinero.com.uy"
-          imgWrapperClasses="bg-[#C2E2FF]"
-        />
-        <PortfolioItem
-          title="Innuy"
-          img="portfolios/innuy2.webp"
-          icon="portfolios/innuy-icon.webp"
-          link="https://innuy.com"
-          imgWrapperClasses="bg-[#FBD4B6]"
-        />
-        <PortfolioItem
-          title="Seva.Love"
-          img="portfolios/seva-love.webp"
-          icon="portfolios/seva-love-icon.webp"
-          link="https://seva.love"
-          imgWrapperClasses="bg-[#D2C3EF]"
-        />
-        <PortfolioItem
-          title="Edward & Associates"
-          img="portfolios/edwards-associates.webp"
-          icon="portfolios/edwards-associates-icon.svg"
-          link="https://eandassociates.com/"
-          imgWrapperClasses="bg-[#D0F1C0]"
-        />
-        <PortfolioItem
-          title="Market Street Family Dental"
-          img="portfolios/market-street-dental.webp"
-          icon="portfolios/market-street-dental-icon.webp"
-          link="https://troyildentist.com/"
-          imgWrapperClasses="bg-[#C0F1DA]"
-        />
+          link={portfolio.link}
+          backgroundColor={portfolio.backgroundColor}
+        />)) }
       </motion.div>
     </section>
   );
@@ -64,6 +40,7 @@ interface ItemProps {
   link: string;
   variant?: "variant1" | "variant2" | "variant3";
   imgWrapperClasses?: string;
+  backgroundColor?: string;
 }
 
 function PortfolioItem(props: ItemProps) {
@@ -122,7 +99,7 @@ function PortfolioItemVariant3({
   img,
   icon,
   link,
-  imgWrapperClasses = "bg-[#CFE5E7]",
+  backgroundColor,
 }: ItemProps) {
   return (
     <motion.a
@@ -133,7 +110,10 @@ function PortfolioItemVariant3({
     >
       <article className="border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col h-full group-hover:shadow transition-shadow overflow-clip">
         <div
-          className={`${imgWrapperClasses} p-4 xl:p-6 xl:pb-[26px] flex items-center justify-center border-b border-black border-opacity-10`}
+          className={`p-4 xl:p-6 xl:pb-[26px] flex items-center justify-center border-b border-black border-opacity-10`}
+          style={{
+            backgroundColor: backgroundColor.hex || "#CFE5E7",
+          }}
         >
           <img
             src={img}
