@@ -27,6 +27,7 @@ export default function Portfolios({portfolios}) {
           icon="portfolios/peregrinus-icon.webp"
           link={portfolio.link}
           backgroundColor={portfolio.backgroundColor}
+          key={portfolio._id}
         />)) }
       </motion.div>
     </section>
