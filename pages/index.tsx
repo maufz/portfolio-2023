@@ -8,6 +8,7 @@ import About from "@/components/About"
 
 import { createClient } from "next-sanity";
 import { SchemaType } from "sanity"
+import { PortfolioData } from "@/sanity/schemas/portfolio"
 
 const client = createClient({
   projectId: 't9c2a4oz',
@@ -24,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({portfolios}: {portfolios: SchemaType}) {
+export default function Home({portfolios}: {portfolios: PortfolioData[]}) {
   return (
     <>
       <Head>
