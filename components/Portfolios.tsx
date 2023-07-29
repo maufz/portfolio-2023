@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { container, item } from "../utils/nested-animations";
+import type { SchemaType } from "sanity";
 
 import imageUrlBuilder from '@sanity/image-url';
+import type { PortfolioData } from "@/sanity/schemas/portfolio";
 
 const builder = imageUrlBuilder({
   projectId: 't9c2a4oz',
   dataset: 'production',
 })
 
-export default function Portfolios({portfolios}) {
+export default function Portfolios({portfolios}: {portfolios: PortfolioData[]}) {
 
   // console.log(portfolios);
 
@@ -41,7 +43,9 @@ interface ItemProps {
   link: string;
   variant?: "variant1" | "variant2" | "variant3";
   imgWrapperClasses?: string;
-  backgroundColor?: string;
+  backgroundColor?: {
+    hex: string;
+  };
 }
 
 function PortfolioItem(props: ItemProps) {
@@ -100,8 +104,9 @@ function PortfolioItemVariant3({
   img,
   icon,
   link,
-  backgroundColor,
+  backgroundColor = { hex: "#CFE5E7" },
 }: ItemProps) {
+  
   return (
     <motion.a
       href={link}

@@ -7,6 +7,7 @@ import Head from "next/head"
 import About from "@/components/About"
 
 import { createClient } from "next-sanity";
+import { SchemaType } from "sanity"
 
 const client = createClient({
   projectId: 't9c2a4oz',
@@ -14,7 +15,7 @@ const client = createClient({
   apiVersion: '2023-07-27',
 });
 export async function getStaticProps() {
-  const portfolios = await client.fetch(`*[_type == "portfolio"]`);
+  const portfolios = await client.fetch(`*[_type == "portfolio"]`) as SchemaType[];
   console.log(portfolios);
   return {
     props: {
@@ -23,7 +24,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({portfolios}) {
+export default function Home({portfolios}: {portfolios: SchemaType}) {
   return (
     <>
       <Head>
