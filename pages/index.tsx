@@ -5,8 +5,22 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Head from "next/head"
 import About from "@/components/About"
+import type { Portfolio, PortfolioFetchResponse } from "@/types/portfolios"
 
-export default function Home() {
+export async function getServerSideProps() {
+  
+  const response = await fetch(`${process.env.STRAPI_URL}/api/portfolios?populate=*`);
+  // console.log(`${process.env.STRAPI_URL}/api/portfolios`);
+  const portfolios = await response.json();
+  console.log(portfolios);
+  return {
+    props: {
+      portfolios
+    },
+  };
+}
+
+export default function Home({portfolios}: {portfolios: PortfolioFetchResponse}) {
   return (
     <>
       <Head>
@@ -24,7 +38,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Portfolios />
+        <Portfolios portfolios={portfolios} />
       </main>
       <Footer></Footer>
     </>

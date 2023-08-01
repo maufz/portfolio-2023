@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { container, item } from "../utils/nested-animations";
+import type { Portfolio, PortfolioFetchResponse } from "../types/portfolios";
 
-export default function Portfolios() {
+export default function Portfolios({ portfolios }: { portfolios: PortfolioFetchResponse }) {
+  console.log(portfolios);
   return (
     <section className="pt-8 pb-14 border-t border-black border-opacity-10 border-dashed">
       <motion.div
@@ -11,47 +13,18 @@ export default function Portfolios() {
         animate="visible"
         viewport={{ once: true }}
       >
-        <PortfolioItem
-          title="Peregrinus"
-          img="portfolios/peregrinus2.webp"
-          icon="portfolios/peregrinus-icon.webp"
-          link="https://peregrinus.com.uy"
-        />
-        <PortfolioItem
-          title="Midinero"
-          img="portfolios/midinero2.webp"
-          icon="portfolios/midinero-icon.webp"
-          link="https://midinero.com.uy"
-          imgWrapperClasses="bg-[#C2E2FF]"
-        />
-        <PortfolioItem
-          title="Innuy"
-          img="portfolios/innuy2.webp"
-          icon="portfolios/innuy-icon.webp"
-          link="https://innuy.com"
-          imgWrapperClasses="bg-[#FBD4B6]"
-        />
-        <PortfolioItem
-          title="Seva.Love"
-          img="portfolios/seva-love.webp"
-          icon="portfolios/seva-love-icon.webp"
-          link="https://seva.love"
-          imgWrapperClasses="bg-[#D2C3EF]"
-        />
-        <PortfolioItem
-          title="Edward & Associates"
-          img="portfolios/edwards-associates.webp"
-          icon="portfolios/edwards-associates-icon.svg"
-          link="https://eandassociates.com/"
-          imgWrapperClasses="bg-[#D0F1C0]"
-        />
-        <PortfolioItem
-          title="Market Street Family Dental"
-          img="portfolios/market-street-dental.webp"
-          icon="portfolios/market-street-dental-icon.webp"
-          link="https://troyildentist.com/"
-          imgWrapperClasses="bg-[#C0F1DA]"
-        />
+        {portfolios.data.map(portfolio => {
+          let portfolioData = portfolio.attributes;
+          return (
+            <PortfolioItem
+              key={portfolio.id}
+              title={portfolioData.Name}
+              img={process.env.NEXT_PUBLIC_STRAPI_URL! + portfolioData.thumbnail?.data.attributes.url}
+              icon={process.env.NEXT_PUBLIC_STRAPI_URL! + portfolioData.icon?.data.attributes.url}
+              link={portfolioData.link}
+            />
+          );
+        })}
       </motion.div>
     </section>
   );
