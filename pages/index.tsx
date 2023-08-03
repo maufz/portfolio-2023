@@ -6,18 +6,14 @@ import Footer from "@/components/Footer"
 import Head from "next/head"
 import About from "@/components/About"
 
-import { createClient } from "next-sanity";
+import sanityClient from "@/utils/sanity-client"
+
 import { SchemaType } from "sanity"
 import { PortfolioData } from "@/sanity/schemas/portfolio"
 
-const client = createClient({
-  projectId: 't9c2a4oz',
-  dataset: 'production',
-  apiVersion: '2023-07-27',
-});
-export async function getStaticProps() {
-  const portfolios = await client.fetch(`*[_type == "portfolio"]`) as SchemaType[];
-  console.log(portfolios);
+
+export async function getServerSideProps() {
+  const portfolios = await sanityClient.fetch(`*[_type == "portfolio"] | order(name)`) as PortfolioData[];
   return {
     props: {
       portfolios

@@ -1,7 +1,10 @@
+import {CaseIcon} from '@sanity/icons'
+
 const portfolioSchema = {
   name: "portfolio",
   type: "document",
   title: "Portfolio",
+  icon: CaseIcon,
   fields: [
     {
       name: "name",
