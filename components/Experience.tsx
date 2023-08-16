@@ -8,11 +8,14 @@ export default function Experience() {
   animate="visible" viewport={{ once: true }}>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Experiencia</h2>
-      <ExperienceItem img="ameba-logo.jpg" imgAlt="Logo de Ameba Creative Studio" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.com.uy" />
+      <ExperienceItem img="ameba-logo.jpg" imgAlt="Logo de Ameba Creative Studio" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.studio" />
     </motion.div>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Educación</h2>
-      <ExperienceItem img="ort-logo.jpg" imgAlt="Logo de la Universidad ORT" title="Tec. en Diseño Digital Web, Universidad&nbsp;ORT" subtitle="2018 - 2020" link="https://ort.edu.uy" />
+      <div className="space-y-2">
+        <ExperienceItem img="ort-logo.jpg" imgAlt="Logo de la Universidad ORT" title="Analista IT, Universidad&nbsp;ORT" subtitle="2023 - presente" link="https://ort.edu.uy" />
+        <ExperienceItem img="ort-logo.jpg" imgAlt="Logo de la Universidad ORT" title="Tec. en Diseño Digital Web, Universidad&nbsp;ORT" subtitle="2018 - 2020" link="https://ort.edu.uy" />
+      </div>
     </motion.div>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Cursos</h2>
@@ -21,6 +24,14 @@ export default function Experience() {
   </motion.section>
 }
 
+
+interface ItemProps {
+  title: string
+  img?: string
+  subtitle?: string
+  imgAlt?: string
+  link?: string
+}
 
 function ExperienceItem({img, title, subtitle, imgAlt, link}: ItemProps) {
   return <a href={link} className="flex md:items-center gap-x-3 gap-y-2 rounded-2xl border border-black border-opacity-20 p-3 sm:p-4 bg-white bg-opacity-50
@@ -35,12 +46,4 @@ function ExperienceItem({img, title, subtitle, imgAlt, link}: ItemProps) {
       <div className="text-black text-opacity-70">{subtitle}</div>
     </div>
   </a>
-}
-
-interface ItemProps {
-  title: string
-  img?: string
-  subtitle?: string
-  imgAlt?: string
-  link?: string
 }
