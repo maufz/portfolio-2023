@@ -8,7 +8,9 @@ export default function Experience() {
   animate="visible" viewport={{ once: true }}>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Experiencia</h2>
-      <ExperienceItem img="ameba-logo.jpg" imgAlt="Logo de Ameba Creative Studio" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.studio" />
+      <div className="space-y-2">
+        <ExperienceItem img="ameba-logo.jpg" imgAlt="Logo de Ameba Creative Studio" title="Ameba Creative Studio" subtitle="2019 - presente" link="https://ameba.studio" />
+      </div>
     </motion.div>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Educación</h2>
@@ -19,7 +21,9 @@ export default function Experience() {
     </motion.div>
     <motion.div variants={item}>
       <h2 className="h4 mb-2">Cursos</h2>
-      <ExperienceItem img="coderhouse-logo.jpg" imgAlt="Logo de Coderhouse" title="Diseño UX/UI, Coderhouse" subtitle="10/2022 - 01/2023" link="https://coderhouse.com.uy/pages/certificados/63d446d4687a8c000e5c91d8" />
+      <div className="space-y-2">
+        <ExperienceItem img="coderhouse-logo.jpg" imgAlt="Logo de Coderhouse" title="Diseño UX/UI, Coderhouse" subtitle="10/2022 - 01/2023" link="https://coderhouse.com.uy/pages/certificados/63d446d4687a8c000e5c91d8" />
+      </div>
     </motion.div>
   </motion.section>
 }
