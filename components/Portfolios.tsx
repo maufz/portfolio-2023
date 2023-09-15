@@ -3,7 +3,10 @@ import { container, item } from "../utils/nested-animations";
 
 export default function Portfolios() {
   return (
-    <section className="pt-8 pb-14 border-t border-black border-opacity-10 border-dashed">
+    <section className="pt-10 lg:pt-20 pb-14 border-t border-black border-opacity-10 border-dashed">
+      <div className="container">
+        <h2 className="h4 mb-6 lg:mb-12 text-center">Proyectos en los que he trabajado:</h2>
+      </div>
       <motion.div
         className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 content-center"
         variants={container}
@@ -11,6 +14,13 @@ export default function Portfolios() {
         animate="visible"
         viewport={{ once: true }}
       >
+        <PortfolioItem
+          title="Ameba Creative Studio"
+          img="portfolios/ameba-studio.jpg"
+          icon="/ameba-logo.jpg"
+          link="https://ameba.studio"
+          imgWrapperClasses="bg-neutral-800"
+        />
         <PortfolioItem
           title="Peregrinus"
           img="portfolios/peregrinus2.webp"
@@ -30,6 +40,13 @@ export default function Portfolios() {
           icon="portfolios/innuy-icon.webp"
           link="https://innuy.com"
           imgWrapperClasses="bg-[#FBD4B6]"
+        />
+        <PortfolioItem
+          title="Blind Acting"
+          img="portfolios/blind-acting.jpg"
+          icon="portfolios/blind-acting-icon.jpg"
+          link="https://blindacting.com"
+          imgWrapperClasses="bg-neutral-200"
         />
         <PortfolioItem
           title="Seva.Love"
@@ -66,58 +83,7 @@ interface ItemProps {
   imgWrapperClasses?: string;
 }
 
-function PortfolioItem(props: ItemProps) {
-  const { title, img, icon, link, variant = "variant3" } = props;
-
-  if (variant == "variant2") return <PortfolioItemVariant2 {...props} />;
-  if (variant == "variant3") return <PortfolioItemVariant3 {...props} />;
-
-  return (
-    <motion.a href={link} target="_blank" variants={item}>
-      <article className="p-6 border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col gap-4 h-full hover:shadow transition-shadow">
-        <img
-          src={img}
-          alt={`Captura de pantalla de la página de inicio de ${title}`}
-          className={`aspect-[3/2] w-full object-cover rounded-lg border border-black border-opacity-10 bg-white`}
-        />
-        <div className="flex items-center gap-3">
-          {icon && (
-            <img
-              src={icon}
-              className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
-            />
-          )}
-          <h1 className="text-xl font-medium font-headings">{title}</h1>
-        </div>
-      </article>
-    </motion.a>
-  );
-}
-
-function PortfolioItemVariant2({ title, img, icon, link }: ItemProps) {
-  return (
-    <a href={link} target="_blank">
-      <article className="border border-black border-opacity-20 rounded-2xl bg-white bg-opacity-50 flex flex-col gap-4 h-full hover:shadow transition-shadow">
-        <img
-          src={img}
-          alt=""
-          className="aspect-[3/2] w-full object-cover rounded-t-2xl border border-black border-opacity-10 bg-white"
-        />
-        <div className="flex items-center gap-3 px-4 pb-5">
-          {icon && (
-            <img
-              src={icon}
-              className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
-            />
-          )}
-          <h1 className="text-xl font-medium font-headings">{title}</h1>
-        </div>
-      </article>
-    </a>
-  );
-}
-
-function PortfolioItemVariant3({
+function PortfolioItem({
   title,
   img,
   icon,
@@ -138,7 +104,7 @@ function PortfolioItemVariant3({
           <img
             src={img}
             alt={`Captura de pantalla de la página de inicio de ${title}`}
-            className="aspect-video w-full object-cover rounded-lg bg-white mb-[2] group-hover:-translate-y-1 transition-transform group-hover:duration-300"
+            className="aspect-video w-full object-cover rounded-lg group-hover:-translate-y-1 transition-transform group-hover:duration-300"
           />
         </div>
         <div className="flex items-center gap-2 md:gap-3 p-4 xl:px-6 xl:pb-6 xl:pt-5">
