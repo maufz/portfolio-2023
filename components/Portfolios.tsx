@@ -5,7 +5,7 @@ export default function Portfolios() {
   return (
     <section className="pt-10 lg:pt-20 pb-14 border-t border-black border-opacity-10 border-dashed">
       <div className="container">
-        <h2 className="h4 mb-6 lg:mb-12 text-center">Proyectos en los que he trabajado:</h2>
+        <h2 className="h4 mb-6 lg:mb-12 text-center">Proyectos en los que he trabajado</h2>
       </div>
       <motion.div
         className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 content-center"
