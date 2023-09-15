@@ -13,37 +13,34 @@ const knowledge: Knowledge[] = [
   {
     text: "React",
     icon: "fa-brands_react.svg",
-    url: "?",
   },
   {
     text: "Vue",
     icon: "fa-brands_vuejs.svg",
-    url: "?",
   },
   {
     text: "Svelte",
     icon: "carbon_logo-svelte.svg",
-    url: "?",
+  },
+  {
+    text: "NodeJS",
+    icon: "akar-icons_node-fill.svg",
   },
   {
     text: "PHP",
     icon: "fa6-brands_php.svg",
-    url: "?",
   },
   {
     text: "Wordpress",
     icon: "ic_baseline-wordpress.svg",
-    url: "?",
   },
   {
     text: "Tailwind CSS",
     icon: "mdi_tailwind.svg",
-    url: "?",
   },
   {
     text: "Bootstrap",
     icon: "ri_bootstrap-fill.svg",
-    url: "?",
   },
   {
     text: "GSAP",
@@ -68,7 +65,6 @@ export default function Knowledge() {
           className={item.classes}
         />
       ))}
-      <KnowledgeItem text="Y más..." className="text-black text-opacity-80" />
     </motion.div>
   );
 }
