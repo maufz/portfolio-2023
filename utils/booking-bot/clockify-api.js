@@ -20,6 +20,6 @@ export const getTodayProjects = async () => {
 };
 
 export const getProjectsByName = (projects, userName) => {
-  if (!projects) return [];
+  if (!projects || projects.length < 1) return [];
   return projects.filter((project) => project.userName === userName);
 };
