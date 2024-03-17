@@ -115,9 +115,9 @@ function PortfolioItem({
               className="rounded-lg border border-black border-opacity-10 w-8 h-8 object-cover"
             />
           )}
-          <h1 className="text-md lg:text-xl font-medium font-headings">
+          <h3 className="text-md lg:text-xl font-medium font-headings">
             {title}
-          </h1>
+          </h3>
         </div>
       </article>
     </motion.a>
